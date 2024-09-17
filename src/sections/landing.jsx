@@ -213,10 +213,7 @@ const Landing = () => {
   const [activeMenu1, setActiveMenu1] = useState(0);
   const [activeMenu2, setActiveMenu2] = useState(0);
   let depthLevel = 1;
-  const [level, setLevel] = useState(0);
-  setTimeout(() => {
-    setLevel(1);
-  }, 5000);
+
   const navigate = useNavigate();
   const redirect = () => {
     if (inputOne !== "" && inputTwo !== "") {
@@ -229,7 +226,7 @@ const Landing = () => {
     }
   };
   return (
-    <section className={`landing__section ${level ? " " : "hidden"}`}>
+    <section className={`landing__section`}>
       <div className="landing__section-title">
         <h1 className="landing__section-h1">
           India's first professional drone care platform.

@@ -1,23 +1,15 @@
-// import { NavLink } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import React from "react";
+import { useState } from "react";
 
-const Navbar = () => {
-  const navigate = useNavigate();
-  const submitNavigate = () => {
-    navigate("/contact", {
-      state: {
-        drone: "Dji Matrix series 300RTK",
-        service: "Battery maintenance",
-      },
-    });
-  };
+const Navbar = ({ animate }) => {
   return (
-    <nav className="main__nav-bar">
-      <div className="main__logo-box">
-        <img src="../public/logo/logo-1.webp" alt="logo" className="img" />
+    <nav
+      className={`main__nav-bar ${animate == 1 ? "animate grow " : "shrink"}  `}
+    >
+      <div className="main__logo-box pop-up ">
+        <img src="/logo/logo-1.webp" alt="logo" className="img" />
       </div>
-      <div className="nav-link" onClick={submitNavigate}>
+      <div className="nav-link rev">
         <div className="contact-box">Contact &rarr;</div>
       </div>
     </nav>
