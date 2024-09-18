@@ -25,7 +25,6 @@ const Contact = () => {
     formData.append("drone", drone);
     formData.append("service", service);
     formData.append("access_key", import.meta.env.VITE_REACT_APP_API_KEY);
-    console.log(import.meta.env.VITE_REACT_APP_API_KEY);
     try {
       const response = await axios.post(
         "https://api.web3forms.com/submit",
@@ -44,6 +43,7 @@ const Contact = () => {
       setNumber("");
     } catch (err) {
       setResult(err.message);
+      setDisable(false);
     }
   };
 
