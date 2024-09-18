@@ -457,6 +457,12 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+.disable {
+  cursor: not-allowed;
+  background-color: white;
+  color: gray;
+  border: 1px solid gray;
+}
 
 @keyframes grow {
   0% {

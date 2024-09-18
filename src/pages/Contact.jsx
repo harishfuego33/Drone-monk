@@ -4,18 +4,19 @@ import { useLocation } from "react-router-dom";
 import Picture from "../components/Picture";
 import { useState } from "react";
 import axios from "axios";
+import tick from "../../public/logo/tick.svg";
 const Contact = () => {
-  const ACCESS_KEY = "4bcfe7cb-4f4f-45b8-af74-49352154af77";
   const l = useLocation();
   const { drone, service } = l.state || {};
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
-  const [result, setResult] = useState("");
+  const [result, setResult] = useState(0);
+  const [disable, setDisable] = useState(false);
   const handleSubmit = async (e) => {
+    setDisable(true);
     e.preventDefault();
-    console.log(e.target);
     const formData = new FormData(e.target);
     formData.append("name", name);
     formData.append("location", location);
@@ -23,7 +24,8 @@ const Contact = () => {
     formData.append("number", number);
     formData.append("drone", drone);
     formData.append("service", service);
-    formData.append("access_key", ACCESS_KEY);
+    formData.append("access_key", import.meta.env.VITE_REACT_APP_API_KEY);
+    console.log(import.meta.env.VITE_REACT_APP_API_KEY);
     try {
       const response = await axios.post(
         "https://api.web3forms.com/submit",
@@ -34,74 +36,93 @@ const Contact = () => {
           },
         }
       );
-      setResult(response.data.message); // axios parses the JSON automatically
+      setResult(response.status);
+      setDisable(false);
+      setEmail("");
+      setLocation("");
+      setName("");
+      setNumber("");
     } catch (err) {
-      console.error("Error:", err.message);
+      setResult(err.message);
     }
   };
+
   return (
     <>
       <Navbar animate={0} />
       <main className="contact__main">
         <h1 className="contact__contact-title">Contact Us</h1>
         <form className="contact__from" onSubmit={handleSubmit}>
-          <div className="contact__from-names">
-            <input
-              className="contact__from-inputs fillable"
-              type="text"
-              placeholder="Name"
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-            <input
-              className="contact__from-inputs fillable"
-              type="text"
-              placeholder="Location"
-              onChange={(e) => setLocation(e.target.value)}
-              required
-            />
-          </div>
-          <div className="contact__from-names ">
-            <input
-              className="contact__from-inputs fillable email"
-              type="email"
-              placeholder="Email"
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <input
-              className="contact__from-inputs fillable"
-              type="number"
-              placeholder="phone number"
-              onChange={(e) => setNumber(e.target.value)}
-              required
-            />
-          </div>
-          <div className="contact__from-names">
-            <input
-              className="contact__from-inputs not-fillable input-1"
-              type="text"
-              value={drone}
-              id="input-1"
-              readOnly
-            />
-            <label className="input__fillable input_1" htmlFor="input-1">
-              This is filled by you{" "}
-            </label>
-            <input
-              className="contact__from-inputs not-fillable input-2"
-              type="text"
-              value={service}
-              id="input-2"
-              readOnly
-            />
-            <label className="input__fillable input_2" htmlFor="input-2">
-              This is filled by you
-            </label>
-          </div>
-          <button type="submit" className="submit-btn">
-            submit
-          </button>
+          {result !== 200 ? (
+            <>
+              <div className="contact__from-names">
+                <input
+                  className="contact__from-inputs fillable"
+                  type="text"
+                  placeholder="Name"
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                />
+                <input
+                  className="contact__from-inputs fillable"
+                  type="text"
+                  placeholder="Location"
+                  onChange={(e) => setLocation(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="contact__from-names ">
+                <input
+                  className="contact__from-inputs fillable email"
+                  type="email"
+                  placeholder="Email"
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+                <input
+                  className="contact__from-inputs fillable"
+                  type="number"
+                  placeholder="phone number"
+                  onChange={(e) => setNumber(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="contact__from-names">
+                <input
+                  className="contact__from-inputs not-fillable input-1"
+                  type="text"
+                  value={drone}
+                  id="input-1"
+                  readOnly
+                />
+                <label className="input__fillable input_1" htmlFor="input-1">
+                  This is filled by you{" "}
+                </label>
+                <input
+                  className="contact__from-inputs not-fillable input-2"
+                  type="text"
+                  value={service}
+                  id="input-2"
+                  readOnly
+                />
+                <label className="input__fillable input_2" htmlFor="input-2">
+                  This is filled by you
+                </label>
+              </div>
+              <button
+                type="submit"
+                className={`submit-btn ${disable ? "disable" : ""}`}
+                disabled={disable}
+              >
+                submit
+              </button>
+            </>
+          ) : (
+            <>
+              <img src={tick} alt="tick image" />
+              <h1>Email sent successfully!</h1>
+            </>
+          )}
         </form>
       </main>
       <Picture />
