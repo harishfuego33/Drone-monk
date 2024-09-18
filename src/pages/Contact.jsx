@@ -121,6 +121,9 @@ const Contact = () => {
             <>
               <img src={tick} alt="tick image" />
               <h1>Email sent successfully!</h1>
+              <p className="contact__article-p">
+                we will call you with in 24 hours
+              </p>
             </>
           )}
         </form>
