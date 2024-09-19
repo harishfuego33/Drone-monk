@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MenuItems from "../components/MenuItems";
+import droneImage from "../../public/Background/drone.png";
 const droneList = [
   {
     id: 1,
@@ -305,7 +306,7 @@ const Landing = () => {
         </div>
       </div>
       <div className="landing__section-image">
-        <img src="/background/drone.png" alt="drone" className="img up-down" />
+        <img src={droneImage} alt="drone" className="img up-down" />
       </div>
     </section>
   );
