@@ -14,6 +14,7 @@ const Contact = () => {
   const [number, setNumber] = useState("");
   const [result, setResult] = useState(0);
   const [disable, setDisable] = useState(false);
+  const ACCESS_KEY = import.meta.env.VITE_REACT_APP_API_KEY;
   const handleSubmit = async (e) => {
     setDisable(true);
     e.preventDefault();
@@ -24,7 +25,7 @@ const Contact = () => {
     formData.append("number", number);
     formData.append("drone", drone);
     formData.append("service", service);
-    formData.append("access_key", import.meta.env.VITE_REACT_APP_API_KEY);
+    formData.append("access_key", ACCESS_KEY);
     try {
       const response = await axios.post(
         "https://api.web3forms.com/submit",
