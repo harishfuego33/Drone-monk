@@ -308,7 +308,11 @@ const Landing = () => {
         </div>
       </div>
       <div className="landing__section-image">
-        <img src={droneImage} alt="drone" className="img up-down" />
+        <img
+          src="https://d1pn9nv3zrol6b.cloudfront.net/drone.png"
+          alt="drone"
+          className="img up-down"
+        />
       </div>
     </section>
   );

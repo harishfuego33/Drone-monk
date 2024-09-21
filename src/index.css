@@ -126,7 +126,7 @@ main {
   position: relative;
   min-height: 100vh;
   /* max-width: 108rem; */
-  background-image: url("../public/Background/download_1_1_1x.webp");
+  background-image: url("https://d1pn9nv3zrol6b.cloudfront.net/backgroundMain.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -291,7 +291,7 @@ ul {
 }
 
 .service__list {
-  background-image: url("../public/Background/618_3_1x.webp");
+  background-image: url("https://d1pn9nv3zrol6b.cloudfront.net/service.webp");
   background-position: center;
   height: 50vh;
   display: flex;
@@ -324,7 +324,7 @@ ul {
 .service__footer {
   position: relative;
   height: 40vh;
-  background-image: url("../public/Background/closeup_male_hand_assembling_gear_600nw_2029283366_1_1x.webp");
+  background-image: url("https://d1pn9nv3zrol6b.cloudfront.net/footer.webp ");
   display: flex;
   align-items: center;
   flex-direction: column;
