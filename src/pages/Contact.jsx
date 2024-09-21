@@ -13,6 +13,7 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
   const [result, setResult] = useState(0);
+  const [description, setDescription] = useState("");
   const [disable, setDisable] = useState(false);
   const ACCESS_KEY = import.meta.env.VITE_REACT_APP_API_KEY;
   const handleSubmit = async (e) => {
@@ -25,6 +26,7 @@ const Contact = () => {
     formData.append("number", number);
     formData.append("drone", drone);
     formData.append("service", service);
+    formData.append("description", description);
     formData.append("access_key", ACCESS_KEY);
     try {
       const response = await axios.post(
@@ -110,6 +112,12 @@ const Contact = () => {
                   This is filled by you
                 </label>
               </div>
+              <textarea
+                placeholder="Description"
+                className="contact__textarea"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              ></textarea>
               <button
                 type="submit"
                 className={`submit-btn ${disable ? "disable" : ""}`}

@@ -1,7 +1,13 @@
 import Dropdown from "./Dropdown";
 import React, { useState } from "react";
 
-const MenuItems = ({ items, depthLevel, setInputOne }) => {
+const MenuItems = ({
+  items,
+  depthLevel,
+  setInputOne,
+  setActiveMenu1,
+  setActiveMenu2,
+}) => {
   const [dropdown, setDropDown] = useState(false);
   const onMouseEnter = () => {
     setDropDown(true);

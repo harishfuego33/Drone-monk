@@ -212,6 +212,7 @@ const Landing = () => {
   const [inputTwo, setInputTwo] = useState("");
   const [activeMenu1, setActiveMenu1] = useState(0);
   const [activeMenu2, setActiveMenu2] = useState(0);
+  let enable = 0;
   let depthLevel = 1;
 
   const navigate = useNavigate();
@@ -225,6 +226,9 @@ const Landing = () => {
       });
     }
   };
+  if (inputOne !== "" && inputTwo !== "") {
+    enable = 1;
+  }
   return (
     <section className={`landing__section`}>
       <div className="landing__section-title">
@@ -256,7 +260,11 @@ const Landing = () => {
                 onMouseEnter={() => setActiveMenu1(1)}
                 onMouseLeave={() => setActiveMenu1(0)}
               >
-                <ul className="menus">
+                <ul
+                  className="menus"
+                  onMouseEnter={() => setActiveMenu1(1)}
+                  onMouseLeave={() => setActiveMenu1(0)}
+                >
                   {activeMenu1
                     ? droneList.map((item, index) => (
                         <MenuItems
@@ -264,6 +272,8 @@ const Landing = () => {
                           key={index}
                           depthLevel={depthLevel}
                           setInputOne={setInputOne}
+                          setActiveMenu1={setActiveMenu1}
+                          setActiveMenu2={setActiveMenu2}
                         />
                       ))
                     : null}
@@ -287,7 +297,11 @@ const Landing = () => {
                 onMouseEnter={() => setActiveMenu2(1)}
                 onMouseLeave={() => setActiveMenu2(0)}
               >
-                <ul className="menus">
+                <ul
+                  className="menus"
+                  onMouseEnter={() => setActiveMenu2(1)}
+                  onMouseLeave={() => setActiveMenu2(0)}
+                >
                   {activeMenu2
                     ? maintainList.map((item, index) => (
                         <MenuItems
@@ -302,9 +316,11 @@ const Landing = () => {
               </div>
             </div>
           </div>
-          <button onClick={redirect} className="get-started">
-            Get Started
-          </button>
+          {enable === 1 && (
+            <button onClick={redirect} className="get-started">
+              Get Started
+            </button>
+          )}
         </div>
       </div>
       <div className="landing__section-image">
