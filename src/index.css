@@ -767,6 +767,9 @@ input::-webkit-inner-spin-button {
   html {
     font-size: 59%;
   }
+  .landing__section {
+    padding: 3rem;
+  }
   .landing__section-title {
     text-align: center;
   }
@@ -797,7 +800,7 @@ input::-webkit-inner-spin-button {
     border-bottom: 1px solid white;
   }
   .landing__section-image img {
-    width: 30rem;
+    width: 50rem;
   }
   .service__brand {
     align-items: center;
@@ -820,6 +823,9 @@ input::-webkit-inner-spin-button {
   .contact__from-inputs {
     width: 100%;
   }
+  .service__footer {
+    height: initial;
+  }
 }
 @media (max-width: 480px) {
   html {
@@ -833,8 +839,11 @@ input::-webkit-inner-spin-button {
     gap: 0.5rem;
     height: 4rem;
   }
+  .landing__section-image img {
+    width: 45rem;
+  }
+
   .get-started {
-    /* height: 100%; */
     padding: 0.5rem;
   }
   .menu-title {

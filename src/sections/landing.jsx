@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MenuItems from "../components/MenuItems";
-import droneImage from "../../public/Background/drone.png";
 const droneList = [
   {
     id: 1,
@@ -255,6 +254,7 @@ const Landing = () => {
                 className={`drone-list ${activeMenu1 ? " " : "hidden"}`}
                 onMouseEnter={() => setActiveMenu1(1)}
                 onMouseLeave={() => setActiveMenu1(0)}
+                readOnly
               >
                 <ul className="menus">
                   {activeMenu1
@@ -311,7 +311,7 @@ const Landing = () => {
         <img
           src="https://d1pn9nv3zrol6b.cloudfront.net/drone.png"
           alt="drone"
-          className="img up-down"
+          className="img up-down "
         />
       </div>
     </section>
