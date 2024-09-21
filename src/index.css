@@ -827,6 +827,9 @@ input::-webkit-inner-spin-button {
     height: initial;
     padding: 3rem;
   }
+  .menus {
+    margin-left: -2.96rem;
+  }
 }
 @media (max-width: 480px) {
   html {
@@ -849,6 +852,9 @@ input::-webkit-inner-spin-button {
   }
   .menu-title {
     font-size: 1.2rem;
+  }
+  .menus {
+    margin-left: initial;
   }
 }
 @media (max-width: 300px) {

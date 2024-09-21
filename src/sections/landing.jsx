@@ -246,6 +246,7 @@ const Landing = () => {
                 placeholder="select the drone"
                 className="landing__section-input"
                 value={inputOne}
+                readOnly
               />
               <span
                 className={`arrow ${activeMenu1 ? "arrow-rotate" : " "}`}
@@ -254,7 +255,6 @@ const Landing = () => {
                 className={`drone-list ${activeMenu1 ? " " : "hidden"}`}
                 onMouseEnter={() => setActiveMenu1(1)}
                 onMouseLeave={() => setActiveMenu1(0)}
-                readOnly
               >
                 <ul className="menus">
                   {activeMenu1
