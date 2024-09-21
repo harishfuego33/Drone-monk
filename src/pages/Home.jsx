@@ -3,10 +3,8 @@ import Landing from "../sections/landing";
 import Service from "../sections/service";
 import Footer from "../sections/footer";
 import Navbar from "../components/Navbar";
-import { useState } from "react";
 const Home = () => {
-  const [first, setFirst] = useState(1);
-  // setTimeout(() => setFirst(1), 1000);
+  const first = 1;
   return (
     <>
       <Navbar animate={first} />

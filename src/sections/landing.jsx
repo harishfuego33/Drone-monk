@@ -236,68 +236,70 @@ const Landing = () => {
           Stay tuned and be ready to elevate your drone experience with UFO
           Drone Care!
         </p>
-        <div className="landing__section-inputbox">
-          <div
-            className="landing__section-inputs"
-            onMouseEnter={() => setActiveMenu1(1)}
-            onMouseLeave={() => setActiveMenu1(0)}
-          >
-            <input
-              placeholder="select the drone"
-              className="landing__section-input"
-              value={inputOne}
-            />
-            <span
-              className={`arrow ${activeMenu1 ? "arrow-rotate" : " "}`}
-            ></span>
+        <div className="input__wrapper">
+          <div className="landing__section-inputbox">
             <div
-              className={`drone-list ${activeMenu1 ? " " : "hidden"}`}
+              className="landing__section-inputs"
               onMouseEnter={() => setActiveMenu1(1)}
               onMouseLeave={() => setActiveMenu1(0)}
             >
-              <ul className="menus">
-                {activeMenu1
-                  ? droneList.map((item, index) => (
-                      <MenuItems
-                        items={item}
-                        key={index}
-                        depthLevel={depthLevel}
-                        setInputOne={setInputOne}
-                      />
-                    ))
-                  : null}
-              </ul>
+              <input
+                placeholder="select the drone"
+                className="landing__section-input"
+                value={inputOne}
+              />
+              <span
+                className={`arrow ${activeMenu1 ? "arrow-rotate" : " "}`}
+              ></span>
+              <div
+                className={`drone-list ${activeMenu1 ? " " : "hidden"}`}
+                onMouseEnter={() => setActiveMenu1(1)}
+                onMouseLeave={() => setActiveMenu1(0)}
+              >
+                <ul className="menus">
+                  {activeMenu1
+                    ? droneList.map((item, index) => (
+                        <MenuItems
+                          items={item}
+                          key={index}
+                          depthLevel={depthLevel}
+                          setInputOne={setInputOne}
+                        />
+                      ))
+                    : null}
+                </ul>
+              </div>
             </div>
-          </div>
-          <div className="landing__section-inputs">
-            <input
-              placeholder="select the service"
-              className="landing__section-input"
-              value={inputTwo}
-              readOnly
-              onMouseEnter={() => setActiveMenu2(1)}
-              onMouseLeave={() => setActiveMenu2(0)}
-            />
-            <span
-              className={`arrow ${activeMenu2 ? "arrow-rotate" : " "}`}
-            ></span>
-            <div
-              className={`drone-list ${activeMenu2 ? " " : "hidden"}`}
-              onMouseEnter={() => setActiveMenu2(1)}
-              onMouseLeave={() => setActiveMenu2(0)}
-            >
-              <ul className="menus">
-                {activeMenu2
-                  ? maintainList.map((item, index) => (
-                      <MenuItems
-                        items={item}
-                        key={index}
-                        depthLevel={depthLevel}
-                        setInputOne={setInputTwo}
-                      />
-                    ))
-                  : null}
-              </ul>
+            <div className="landing__section-inputs">
+              <input
+                placeholder="select the service"
+                className="landing__section-input"
+                value={inputTwo}
+                readOnly
+                onMouseEnter={() => setActiveMenu2(1)}
+                onMouseLeave={() => setActiveMenu2(0)}
+              />
+              <span
+                className={`arrow ${activeMenu2 ? "arrow-rotate" : " "}`}
+              ></span>
+              <div
+                className={`drone-list ${activeMenu2 ? " " : "hidden"}`}
+                onMouseEnter={() => setActiveMenu2(1)}
+                onMouseLeave={() => setActiveMenu2(0)}
+              >
+                <ul className="menus">
+                  {activeMenu2
+                    ? maintainList.map((item, index) => (
+                        <MenuItems
+                          items={item}
+                          key={index}
+                          depthLevel={depthLevel}
+                          setInputOne={setInputTwo}
+                        />
+                      ))
+                    : null}
+                </ul>
+              </div>
             </div>
           </div>
           <button onClick={redirect} className="get-started">

@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import { useLocation } from "react-router-dom";
-import Picture from "../components/Picture";
+import Picture from "../components/service-list";
 import { useState } from "react";
 import axios from "axios";
 import tick from "../../public/logo/tick.svg";

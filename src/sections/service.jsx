@@ -1,20 +1,9 @@
 import React from "react";
+import Process from "../components/service-list";
 const Service = () => {
   return (
     <section className="service__section">
-      <picture className="service__process">
-        <source
-          srcSet="/Background/process-desktop.png"
-          type="image/png"
-          className="service__process-desktop "
-          width="100%"
-          media="(min-width: 480px)"
-        />
-        <img
-          src="/Background/process-mobile.png"
-          className="service__process-mobile img"
-        />
-      </picture>
+      <Process />
       <div className="service__list">
         <div className="service__comps">
           <h1>Routine maintenance</h1>
