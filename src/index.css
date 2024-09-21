@@ -825,6 +825,7 @@ input::-webkit-inner-spin-button {
   }
   .service__footer {
     height: initial;
+    padding: 3rem;
   }
 }
 @media (max-width: 480px) {
