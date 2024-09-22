@@ -11,7 +11,8 @@ const Footer = () => {
         <h1 className="footer__h1">Flying in Mediation</h1>
         <hr />
         <p className="footer__p1">
-          &copy;copyright 2024 by Pepadverts.All rights deserve to pepadverts
+          &copy;Copyright 2024 by PEPADVERTS. All Rights Reserved. is Powered by
+          PEPADVERTS
         </p>
       </div>
     </footer>
