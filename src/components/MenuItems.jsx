@@ -42,7 +42,10 @@ const MenuItems = ({
           />
         </>
       ) : (
-        <ul className="menu-title" onClick={() => setInputOne(items.title)}>
+        <ul
+          className="menu-title width-auto"
+          onClick={() => setInputOne(items.title)}
+        >
           {items.title}
         </ul>
       )}

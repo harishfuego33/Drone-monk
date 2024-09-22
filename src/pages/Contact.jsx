@@ -1,10 +1,12 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import { useLocation } from "react-router-dom";
-import Picture from "../components/service-list";
+import Process from "../components/service-list";
 import { useState } from "react";
 import axios from "axios";
 import tick from "../../public/logo/tick.svg";
+import Footer from "../sections/footer";
+import Service from "../sections/service";
 const Contact = () => {
   const l = useLocation();
   const { drone, service } = l.state || {};
@@ -54,7 +56,7 @@ const Contact = () => {
     <>
       <Navbar animate={0} />
       <main className="contact__main">
-        <h1 className="contact__contact-title">Contact Us</h1>
+        {/* <h1 className="contact__contact-title">Contact Us</h1> */}
         <form className="contact__from" onSubmit={handleSubmit}>
           {result !== 200 ? (
             <>
@@ -129,19 +131,19 @@ const Contact = () => {
           ) : (
             <>
               <img src={tick} alt="tick image" />
-              <h1>Email sent successfully!</h1>
-              <p className="contact__article-p">
+              <h1 className="success__message">
+                We will contact you with in 24 hours!
+              </h1>
+              {/* <p className="contact__article-p">
                 we will call you with in 24 hours
-              </p>
+              </p> */}
             </>
           )}
         </form>
       </main>
-      <Picture />
+      <Process />
       <article className="contact__article">
-        <h1 className="contact__article-h1">
-          Welcome to UFO Drone Care – Where Drone Magic Happens!
-        </h1>
+        <h1 className="contact__article-h1">Welcome to Drone Monk</h1>
         <p className="contact__article-p">
           We're India’s first and only platform dedicated to making your drones
           soar like never before. At UFO Drone Care, we're not just
@@ -152,6 +154,8 @@ const Contact = () => {
           enchanted with the care it deserves!
         </p>
       </article>
+      <Service />
+      <Footer />
     </>
   );
 };

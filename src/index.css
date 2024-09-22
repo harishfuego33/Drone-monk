@@ -73,7 +73,9 @@ main {
   left: 0;
   transform: translateX(126%);
   width: 3rem;
+  color: black;
 }
+
 .animate .main__logo-box::after {
   animation: hid 1s ease 3s forwards;
 }
@@ -163,11 +165,14 @@ main {
   font-size: 5rem;
   color: white;
   margin-bottom: 1rem;
+  /* word-spacing: 0.4rem; */
+  font-weight: 100;
 }
 .landing__section-p {
   font-size: 2rem;
   color: white;
   margin-bottom: 2rem;
+  font-weight: 100;
 }
 .landing__section-inputbox {
   position: relative;
@@ -229,7 +234,7 @@ ul {
   list-style: none;
 }
 .menus {
-  width: 10rem;
+  width: 15rem;
   margin-left: -2rem;
   user-select: none;
   margin-block: 2rem;
@@ -387,22 +392,24 @@ ul {
   font-size: 4rem;
 }
 .contact__article {
-  margin-top: 1.5rem;
+  margin-block: 5rem;
 }
 .contact__article-h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   text-align: center;
-  color: gray;
+  color: rgb(58, 56, 56);
 }
 .contact__article-p {
   font-size: 1.3rem;
+  word-spacing: 4px;
   text-align: center;
   width: 60%;
   margin: 2rem auto;
+  color: rgb(100, 99, 99);
 }
 .contact__from {
   padding: 3.3rem;
-  box-shadow: 0 0.1rem 4rem rgb(91, 91, 91);
+  /* box-shadow: 0 0.1rem 4rem rgb(91, 91, 91); */
   border-radius: 0.4rem;
   width: fit-content;
   /* margin: 0 auto; */
@@ -476,7 +483,7 @@ input::-webkit-inner-spin-button {
 .disable {
   cursor: not-allowed;
   background-color: white;
-  color: gray;
+  color: rgb(69, 67, 67);
   border: 1px solid gray;
 }
 .service__process {
@@ -597,6 +604,11 @@ input::-webkit-inner-spin-button {
   border-radius: 50%;
   background-color: black;
 }
+.success__message {
+  text-align: center;
+}
+.width-auto {
+}
 
 @keyframes grow {
   0% {
@@ -699,15 +711,14 @@ input::-webkit-inner-spin-button {
     flex-direction: row-reverse;
     height: auto;
     position: relative;
-    margin-bottom: 3rem;
-    z-index: -1;
+    margin-bottom: 8rem;
   }
   .service__line-horizon {
-    height: 200%;
+    height: 100%;
     width: 2px;
     left: 50%;
     right: 50%;
-    top: -30rem;
+    top: 0;
   }
   .service__process-btm,
   .service__process-top {

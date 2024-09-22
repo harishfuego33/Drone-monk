@@ -1,9 +1,8 @@
 import React from "react";
-import Process from "../components/service-list";
+
 const Service = () => {
   return (
     <section className="service__section">
-      <Process />
       <div className="service__list">
         <div className="service__comps">
           <h1>Routine maintenance</h1>

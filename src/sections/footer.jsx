@@ -1,11 +1,12 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer className="service__footer">
-      <div className="footer__logo-box">
+      <NavLink to="/" className="footer__logo-box">
         <img src="/logo/logo-1.webp" alt="logo" className="img" />
-      </div>
+      </NavLink>
       <div className="footer__contact">
         <h1 className="footer__h1">Flying in Mediation</h1>
         <hr />
