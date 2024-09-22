@@ -519,7 +519,7 @@ input::-webkit-inner-spin-button {
 .service__process::before {
   content: "How its works ";
   position: absolute;
-  top: -3rem;
+  top: 2rem;
   left: 3rem;
   /* transform: translate(-50rem, -4rem); */
 
@@ -673,7 +673,7 @@ input::-webkit-inner-spin-button {
 
 @media (max-width: 1024px) {
   .landing__section {
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
   }
   .landing__section-title {
