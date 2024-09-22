@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import { useLocation } from "react-router-dom";
 import Process from "../components/service-list";
@@ -9,7 +9,11 @@ import Footer from "../sections/footer";
 import Service from "../sections/service";
 const Contact = () => {
   const l = useLocation();
-  const { drone, service } = l.state || {};
+  const { drone, service } = l.state || {
+    drone: "drone",
+    service: "service",
+  };
+
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
   const [email, setEmail] = useState("");
@@ -18,8 +22,17 @@ const Contact = () => {
   const [description, setDescription] = useState("");
   const [disable, setDisable] = useState(false);
   const ACCESS_KEY = import.meta.env.VITE_REACT_APP_API_KEY;
+  function setTrue(value) {
+    setDisable(value);
+  }
+  useEffect(() => {
+    if (service === "service" && drone === "drone") {
+      setTrue(true);
+    }
+  }, [drone, service]);
+
   const handleSubmit = async (e) => {
-    setDisable(true);
+    setTrue(true);
     e.preventDefault();
     const formData = new FormData(e.target);
     formData.append("name", name);
@@ -51,7 +64,6 @@ const Contact = () => {
       setDisable(false);
     }
   };
-
   return (
     <>
       <Navbar animate={0} />
@@ -101,7 +113,9 @@ const Contact = () => {
                   readOnly
                 />
                 <label className="input__fillable input_1" htmlFor="input-1">
-                  This is filled by you{" "}
+                  {drone !== "drone"
+                    ? "This is filled by you"
+                    : "please select a drone model in home page"}
                 </label>
                 <input
                   className="contact__from-inputs not-fillable input-2"
@@ -111,7 +125,9 @@ const Contact = () => {
                   readOnly
                 />
                 <label className="input__fillable input_2" htmlFor="input-2">
-                  This is filled by you
+                  {service !== "service"
+                    ? "This is filled by you"
+                    : "please select a service in home page"}
                 </label>
               </div>
               <textarea
