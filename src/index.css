@@ -880,6 +880,10 @@ input::-webkit-inner-spin-button {
   .contact__from-names {
     flex-direction: column;
   }
+  .service__item-btm,
+  .service__item-top {
+    padding: 1.5rem;
+  }
 }
 @media (max-width: 300px) {
   html {
