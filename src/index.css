@@ -516,13 +516,8 @@ input::-webkit-inner-spin-button {
   background-color: black;
   max-width: 128rem;
 }
-.service__process::before {
-  content: "How its works ";
-  position: absolute;
-  top: 2rem;
-  left: 3rem;
-  /* transform: translate(-50rem, -4rem); */
-
+.how__its-works {
+  margin: 3rem;
   font-size: 2rem;
 }
 .service__para {
@@ -704,13 +699,15 @@ input::-webkit-inner-spin-button {
     flex-direction: row-reverse;
     height: auto;
     position: relative;
+    margin-bottom: 3rem;
+    z-index: -1;
   }
   .service__line-horizon {
-    height: 100%;
+    height: 200%;
     width: 2px;
     left: 50%;
     right: 50%;
-    top: 0;
+    top: -30rem;
   }
   .service__process-btm,
   .service__process-top {
