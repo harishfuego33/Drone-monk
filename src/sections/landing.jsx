@@ -272,8 +272,7 @@ const Landing = () => {
                           key={index}
                           depthLevel={depthLevel}
                           setInputOne={setInputOne}
-                          setActiveMenu1={setActiveMenu1}
-                          setActiveMenu2={setActiveMenu2}
+                          setActiveMenu={setActiveMenu1}
                         />
                       ))
                     : null}
@@ -309,6 +308,7 @@ const Landing = () => {
                           key={index}
                           depthLevel={depthLevel}
                           setInputOne={setInputTwo}
+                          setActiveMenu={setActiveMenu2}
                         />
                       ))
                     : null}

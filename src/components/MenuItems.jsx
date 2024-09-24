@@ -1,13 +1,7 @@
 import Dropdown from "./Dropdown";
 import React, { useState } from "react";
 
-const MenuItems = ({
-  items,
-  depthLevel,
-  setInputOne,
-  setActiveMenu1,
-  setActiveMenu2,
-}) => {
+const MenuItems = ({ items, depthLevel, setInputOne, setActiveMenu }) => {
   const [dropdown, setDropDown] = useState(false);
   const onMouseEnter = () => {
     setDropDown(true);
@@ -39,12 +33,16 @@ const MenuItems = ({
             dropdown={dropdown}
             depthLevel={depthLevel}
             setInputOne={setInputOne}
+            setActiveMenu={setActiveMenu}
           />
         </>
       ) : (
         <ul
           className="menu-title width-auto"
-          onClick={() => setInputOne(items.title)}
+          onClick={() => {
+            setInputOne(items.title);
+            setActiveMenu(0);
+          }}
         >
           {items.title}
         </ul>

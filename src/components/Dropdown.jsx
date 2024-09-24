@@ -1,6 +1,12 @@
 import React from "react";
 import MenuItems from "./MenuItems";
-const Dropdown = ({ submenus, dropdown, depthLevel, setInputOne }) => {
+const Dropdown = ({
+  submenus,
+  dropdown,
+  depthLevel,
+  setInputOne,
+  setActiveMenu,
+}) => {
   depthLevel = depthLevel + 1;
   const dropDownClass = depthLevel > 0 ? "dropdown-submenu" : " ";
   const alignClass = depthLevel > 0 ? "right-align" : "";
@@ -14,6 +20,7 @@ const Dropdown = ({ submenus, dropdown, depthLevel, setInputOne }) => {
           items={item}
           setInputOne={setInputOne}
           onClick={() => setInputOne(item.title)}
+          setActiveMenu={setActiveMenu}
         >
           {item.title}
         </MenuItems>

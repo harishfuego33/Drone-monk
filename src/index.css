@@ -679,6 +679,16 @@ input::-webkit-inner-spin-button {
     transform: translateY(0rem); /* Back to original */
   }
 }
+@media (max-width: 1920px) {
+  html {
+    font-size: 94%;
+  }
+}
+@media (max-width: 1280px) {
+  html {
+    font-size: 70%;
+  }
+}
 
 @media (max-width: 1024px) {
   .landing__section {
