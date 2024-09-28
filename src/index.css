@@ -882,18 +882,27 @@ input::-webkit-inner-spin-button {
   }
   .landing__section-input {
     padding: 1rem 0rem 1rem 1rem;
+    font-size: 1.6rem;
   }
   .landing__section-inputbox {
     padding-left: 0;
     gap: 0.5rem;
-    height: 4rem;
+    height: 5rem;
+    width: 100%;
+  }
+  .landing__section-h1 {
+    font-size: 4rem;
+  }
+  .landing__section-p {
+    font-size: 1.7rem;
   }
   .landing__section-image img {
-    width: 45rem;
+    width: 55rem;
   }
 
   .get-started {
     padding: 0.5rem;
+    height: 5rem;
   }
   .menu-title {
     font-size: 1.2rem;
