@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Landing from "../sections/landing";
 import Service from "../sections/service";
 import Footer from "../sections/footer";
 import Navbar from "../components/Navbar";
 import Process from "../components/service-list";
+import { useLocation } from "react-router-dom";
 const Home = () => {
   const first = 1;
+  const { pathName } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathName]);
   return (
     <>
       <Navbar animate={first} />

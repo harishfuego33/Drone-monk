@@ -1,17 +1,24 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Service = () => {
   return (
     <section className="service__section">
       <div className="service__list">
         <div className="service__comps">
-          <h1>Routine maintenance</h1>
+          <NavLink to="/contact" className="link-list">
+            <h1>Routine maintenance</h1>
+          </NavLink>
         </div>
         <div className="service__comps">
-          <h1>Drone repair</h1>
+          <NavLink to="/contact" className="link-list">
+            <h1>Drone repair</h1>
+          </NavLink>
         </div>
         <div className="service__comps">
-          <h1>Need drone spare</h1>
+          <NavLink to="/contact" className="link-list">
+            <h1>Need drone spare</h1>
+          </NavLink>
         </div>
       </div>
       <div className="service__brand">

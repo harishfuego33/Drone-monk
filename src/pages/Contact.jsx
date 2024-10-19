@@ -31,6 +31,10 @@ const Contact = () => {
     }
   }, [drone, service]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [l]);
+
   const handleSubmit = async (e) => {
     setTrue(true);
     e.preventDefault();
